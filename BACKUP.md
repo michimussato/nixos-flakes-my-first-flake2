@@ -1,0 +1,13 @@
+
+```
+home-manager switch
+[...]
+Please do one of the following:
+- In standalone mode, use 'home-manager switch -b backup' to back up files automatically.
+- When used as a NixOS or nix-darwin module, set either
+  - 'home-manager.backupFileExtension', or
+  - 'home-manager.backupCommand',
+  to move the file to a new location in the same directory, or run a custom command.
+- Set 'force = true' on the related file options to forcefully overwrite the files below. eg. 'xdg.configFile."mimeapps.list".force = true'
+Existing file '/home/nixos/.config/user-dirs.dirs' would be clobbered
+```
