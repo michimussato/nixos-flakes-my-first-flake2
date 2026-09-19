@@ -5,6 +5,7 @@
   inputs = {
     # https://nix.dev/manual/nix/2.34/command-ref/new-cli/nix3-flake.html#self-attributes1
     # self.submodule = false;
+    # Was not able to confirm that this actually works
     self.lfs = true;  # because Wallpapers are tracked with LFS
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
@@ -19,6 +20,11 @@
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
+    };
+
+    shells-blender = {
+      url = "path:./fhs/buildFHSEnv/blender";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -39,6 +45,9 @@
 #    home.packages = with pkgs; [
 #      insecureNixPkg.kdePackages.neochat
 #    ];
+
+    devShells = inputs.shells-blender.devShells;
+
     nixosConfigurations = {
       # This ideally reflects a hostname (but that's not a requirement)
       nixos-qemu = lib.nixosSystem {

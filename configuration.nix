@@ -26,8 +26,8 @@ in
     # Packages
   ];
 
-  hardware.openrazer.users = [ "nixos" ];
   hardware.openrazer.enable = true;
+  hardware.openrazer.users = [ "@wheel" ];
 
 #  # https://nixos.wiki/wiki/Nvidia
 #  # 1. https://nixos.wiki/wiki/Nvidia#Modifying_NixOS_Configuration
@@ -141,15 +141,47 @@ in
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."nixos" = {
+    # hashedPasswordFile = "/etc/passwd";
+    initialPassword = "nixos";
     isNormalUser = true;
-    description = "nixos";
+    description = "NixOS Sandbox User";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
-    #  rawtherapee
-    #  thunderbird
     ];
   };
+
+  users.users."michael" = {
+    # hashedPasswordFile = "/etc/passwd";
+    initialPassword = "michael";
+    isNormalUser = true;
+    description = "Michael Mussato";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      kdePackages.kate
+    ];
+  };
+  users.mutableUsers = false;
+  # evaluation warning: The user 'michael' has multiple of the options
+  #                    `initialHashedPassword`, `hashedPassword`, `initialPassword`, `password`
+  #                    & `hashedPasswordFile` set to a non-null value.
+  #
+  #                    If multiple of these password options are set at the same time then a
+  #                    specific order of precedence is followed, which can lead to surprising
+  #                    results. The order of precedence differs depending on whether the
+  #                    {option}`users.mutableUsers` option is set.
+  #
+  #                    If the option {option}`users.mutableUsers` is
+  #                    `true`, then the order of precedence is as shown
+  #                    below, where values on the left are overridden by values on the right:
+  #                    {option}`initialHashedPassword` -> {option}`initialPassword` -> {option}`hashedPassword` -> {option}`password` -> {option}`hashedPasswordFile`
+  #
+  #                    The values of these options are:
+  #                    * users.users."michael".hashedPassword: null
+  #                    * users.users."michael".hashedPasswordFile: "/etc/passwd"
+  #                    * users.users."michael".password: null
+  #                    * users.users."michael".initialHashedPassword: null
+  #                    * users.users."michael".initialPassword: "michael"
 
   # Install firefox.
   # leave this enabled so that we always have

@@ -65,6 +65,15 @@
             number = 4;
             rows = 1;
           };
+
+          # scripts.polonium = {
+          #   # Still only works in Plasma 5
+          #   enable = true;
+          #   settings = {
+          #     layout.engine = "binaryTree";
+          #     borderVisibility = "noBorderTiled";
+          #   };
+          # };
         };
 
         # System Settings > Screen Locking > Configure Appearance
@@ -87,6 +96,11 @@
           # GUI setting unknown
           # Use detailed view for file picker
           kdeglobals."KFileDialog Settings"."View Style" = "Detail";
+          dolphinrc.General.EditableUrl = true;
+          dolphinrc.General.ShowFullPath = true;
+          dolphinrc.General.ShowFullPathInTitleBar = true;
+          dolphinrc.General.ShowStatusBar = "FullWidth";
+          dolphinrc.General.ShowZoomSlider = true;
 
           # System Settings > Colors & Themes > Splash Screen
           ksplashrc.KSplash = {

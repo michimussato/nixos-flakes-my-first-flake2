@@ -15,6 +15,7 @@ How to use this flake:
       }
       ```
    2. set hostname: `nixos-qemu`
+   3. ideally enable SSH
 4. `nixos-rebuild --sudo switch`
 5. Install `home-manager` & `plasma-manager`
    ```shell
@@ -24,7 +25,7 @@ How to use this flake:
    nix-shell '<home-manager>' -A install
    # add to `.profie`: '. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"'
    # build test: home-manager build --flake github:michimussato/nixos-flakes-my-first-flake2#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
-   home-manager switch --flake github:michimussato/nixos-flakes-my-first-flake2#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
+   # home-manager switch --flake github:michimussato/nixos-flakes-my-first-flake2#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
    ```
 6. Install flake
    1. `nixosConfigurations`
@@ -33,7 +34,7 @@ How to use this flake:
       # git clone https://github.com/michimussato/nixos-flakes-my-first-flake2.git
       # cd nixos-flakes-my-first-flake2
       # nixos-rebuild --sudo switch --flake .#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
-      nixos-rebuild --sudo switch --flake github:michimussato/nixos-flakes-my-first-flake2#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
+      sudo nixos-rebuild switch --flake github:michimussato/nixos-flakes-my-first-flake2#nixos-qemu --verbose
       # nixos-rebuild --sudo switch --flake .#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
       # [ ] sddm background not visible
       #     - reference to `version https://git-lfs.github.com` in package file seems correct

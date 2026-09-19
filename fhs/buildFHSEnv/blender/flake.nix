@@ -36,37 +36,44 @@
   in
 
   {
-    devShells.x86_64-linux."base" = pkgs.mkShellNoCC {
-      buildInputs = pkgs-base;
-      shellHook = ''
-        echo "You are now in a Blender configured environment."
-        fhs
-      '';
-      env.TEST_VAR = "hello";
-    };
-    devShells.x86_64-linux."blender-3" = pkgs.mkShellNoCC {
-      buildInputs = pkgs-base;
-      shellHook = ''
-        echo "You are now in a Blender 3 configured environment."
-        fhs
-      '';
-      env.TEST_VAR = "hello";
-    };
-    devShells.x86_64-linux.blender-4 = pkgs.mkShellNoCC {
-      buildInputs = pkgs-base;
-      shellHook = ''
-        echo "You are now in a Blender 4 configured environment."
-        fhs
-      '';
-      env.TEST_VAR = "hello";
-    };
-    devShells.x86_64-linux.blender-5 = pkgs.mkShellNoCC {
-      buildInputs = pkgs-base;
-      shellHook = ''
-        echo "You are now in a Blender 5 configured environment."
-        fhs
-      '';
-      env.TEST_VAR = "hello";
+    devShells."${system}" = {
+
+      base = pkgs.mkShellNoCC {
+        buildInputs = pkgs-base;
+        shellHook = ''
+          echo "You are now in a Blender configured environment."
+          fhs
+        '';
+        env.TEST_VAR = "hello";
+      };
+
+      blender-3 = pkgs.mkShellNoCC {
+        buildInputs = pkgs-base;
+        shellHook = ''
+          echo "You are now in a Blender 3 configured environment."
+          fhs
+        '';
+        env.TEST_VAR = "hello";
+      };
+
+      blender-4 = pkgs.mkShellNoCC {
+        buildInputs = pkgs-base;
+        shellHook = ''
+          echo "You are now in a Blender 4 configured environment."
+          fhs
+        '';
+        env.TEST_VAR = "hello";
+      };
+
+      blender-5 = pkgs.mkShellNoCC {
+        buildInputs = pkgs-base;
+        shellHook = ''
+          echo "You are now in a Blender 5 configured environment."
+          fhs
+        '';
+        env.TEST_VAR = "hello";
+      };
+
     };
   };
 }

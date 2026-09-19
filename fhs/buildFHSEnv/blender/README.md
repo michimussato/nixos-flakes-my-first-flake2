@@ -5,7 +5,7 @@
 ```shell
 curl --location https://download.blender.org/release/Blender5.2/blender-5.2.1-linux-x64.tar.xz \
     --output ~/Downloads/blender-5.2.1-linux-x64.tar.xz
-tar -xvf ~/Downloads/blender-5.2.1-linux-x64.tar.xz
+tar -xvf ~/Downloads/blender-5.2.1-linux-x64.tar.xz -C $(dirname ~/Downloads/blender-5.2.1-linux-x64.tar.xz)
 ```
 
 - https://transloadit.com/devtips/decompress-archives-directly-with-curl-and-command-line/
