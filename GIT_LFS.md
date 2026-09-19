@@ -2,6 +2,12 @@
 
 ---
 
+flake does not actually download files tracked by LFS,
+but only the references to those. The setting `lfs = true;`
+in `flake.nix` did not change this behavior.
+
+-> Come back to this another day.
+
 ```shell
 sudo pacman -S git-lfs
 # https://docs.github.com/en/repositories/working-with-files/managing-large-files/configuring-git-large-file-storage

@@ -23,24 +23,24 @@ How to use this flake:
    nix-channel --update
    nix-shell '<home-manager>' -A install
    # add to `.profie`: '. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"'
-   # build test: home-manager build --flake github:michimussato/nixos-flakes-my-first-flake#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
-   home-manager switch --flake github:michimussato/nixos-flakes-my-first-flake#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
+   # build test: home-manager build --flake github:michimussato/nixos-flakes-my-first-flake2#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
+   home-manager switch --flake github:michimussato/nixos-flakes-my-first-flake2#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
    ```
 6. Install flake
    1. `nixosConfigurations`
       ```shell
       # better clone locally for now:
-      # git clone https://github.com/michimussato/nixos-flakes-my-first-flake.git
-      # cd nixos-flakes-my-first-flake
+      # git clone https://github.com/michimussato/nixos-flakes-my-first-flake2.git
+      # cd nixos-flakes-my-first-flake2
       # nixos-rebuild --sudo switch --flake .#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
-      nixos-rebuild --sudo switch --flake github:michimussato/nixos-flakes-my-first-flake#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
+      nixos-rebuild --sudo switch --flake github:michimussato/nixos-flakes-my-first-flake2#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
       # nixos-rebuild --sudo switch --flake .#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
       # [ ] sddm background not visible
       #     - reference to `version https://git-lfs.github.com` in package file seems correct
       ```
    2. `homeConfigurations`
       ```shell
-      home-manager switch --flake github:michimussato/nixos-flakes-my-first-flake#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
+      home-manager switch --flake github:michimussato/nixos-flakes-my-first-flake2#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
       ```
 
 
@@ -132,11 +132,11 @@ rm ${NUKE}.run
 Install flake in Qemu VM:
 ```shell
 # Test:
-# sudo nixos-rebuild build-vm --flake github:michimussato/nixos-flakes-my-first-flake#nixos-qemu --verbose
+# sudo nixos-rebuild build-vm --flake github:michimussato/nixos-flakes-my-first-flake2#nixos-qemu --verbose
 # result/bin/run-*-vm
 # 
-sudo nixos-rebuild boot --flake github:michimussato/nixos-flakes-my-first-flake#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
-sudo nixos-rebuild switch --upgrade --flake github:michimussato/nixos-flakes-my-first-flake#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
+sudo nixos-rebuild boot --flake github:michimussato/nixos-flakes-my-first-flake2#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
+sudo nixos-rebuild switch --upgrade --flake github:michimussato/nixos-flakes-my-first-flake2#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
 ```
 
 - https://nixos.asia/en/nixos-install-flake
@@ -152,8 +152,8 @@ nix-channel --add https://github.com/nix-community/plasma-manager/archive/trunk.
 nix-channel --update
 nix-shell '<home-manager>' -A install
 # . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-home-manager build --flake github:michimussato/nixos-flakes-my-first-flake#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
-home-manager switch --upgrade --flake github:michimussato/nixos-flakes-my-first-flake#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
+home-manager build --flake github:michimussato/nixos-flakes-my-first-flake2#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
+home-manager switch --upgrade --flake github:michimussato/nixos-flakes-my-first-flake2#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
 ```
 
 Get nix store path:
