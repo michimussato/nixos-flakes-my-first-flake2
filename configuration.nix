@@ -256,7 +256,12 @@ in
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    ports = [  ];
+    settings.PermitRootLogin = false;
+    settings.PasswordAuthentication = false;
+  };
 
   # also available for home manager
   services.cachix-agent.enable = true;
