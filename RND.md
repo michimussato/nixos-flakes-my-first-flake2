@@ -53,6 +53,7 @@ References:
 - [Manual](https://nixos.org/manual/nixos/stable/)
 - [NixOS Wiki](https://wiki.nixos.org/wiki/NixOS_Wiki)
   - [Flakes](https://wiki.nixos.org/wiki/Flakes)
+- [Nix Pills](https://nixos.org/guides/nix-pills/)
 - [nix.dev](https://nix.dev/)
   - [As PDF](https://nix.dev/nix-dev.pdf)
 
