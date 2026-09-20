@@ -7,6 +7,7 @@
     * [Editor Setup](#editor-setup)
     * [Development Environments](#development-environments)
       * [devenv](#devenv)
+        * [Cachix](#cachix)
     * [Experimental Features](#experimental-features)
     * [nix-community](#nix-community)
       * [Home Manager](#home-manager)
@@ -16,6 +17,7 @@
     * [Nix/NixOS Upgrade](#nixnixos-upgrade)
     * [Flakes](#flakes)
       * [flake-utils](#flake-utils)
+      * [Starter Configs](#starter-configs)
 <!-- TOC -->
 
 ---
@@ -40,6 +42,8 @@ References:
 - [Stop Guessing: Debug Your Nix Code Fast | Nix REPL](https://www.youtube.com/watch?v=swiWnAwionc)
 - [MyNixOS](https://mynixos.com/)
 - [garnix](https://github.com/garnix-io)
+- [LibrePhoenix](https://www.youtube.com/@librephoenix)
+- [Vimjoyer](https://www.youtube.com/@vimjoyer)
 
 ### NixOS
 
@@ -52,6 +56,7 @@ References:
   - [Search Options](https://search.nixos.org/options)
 - [Manual](https://nixos.org/manual/nixos/stable/)
 - [NixOS Wiki](https://wiki.nixos.org/wiki/NixOS_Wiki)
+  - [Cheat Sheet](https://wiki.nixos.org/wiki/Cheatsheet)
   - [Flakes](https://wiki.nixos.org/wiki/Flakes)
 - [Nix Pills](https://nixos.org/guides/nix-pills/)
 - [nix.dev](https://nix.dev/)
@@ -79,6 +84,31 @@ References:
 
 References:
 - [Devenv.sh: Instant Reproducible Dev Environments with Nix](https://www.youtube.com/watch?v=Oj9AxyiaVvU)
+
+##### Cachix
+
+- [Adding yourself to `trusted-users`](https://devenv.sh/binary-caching/#adding-yourself-to-trusted-users)
+- [Devenv.sh, python and cachix questions](https://discourse.nixos.org/t/devenv-sh-python-and-cachix-questions/78151/9)
+
+Todo:
+- [ ] Cachix explanation
+
+```nix
+{
+  # Is this actually needed?
+  services.cachix-agent.enable = true;
+  
+  # Todo:
+  # try with
+  # nix.settings.trusted-users = [ "root" "@wheel" ];
+  # instead of
+  nix.settings.trusted-users = [
+    "root"
+    "nixos"
+    # "michael"
+  ];
+}
+```
 
 ### Experimental Features
 
@@ -147,6 +177,8 @@ Resources:
 Todo:
 - [ ] Investigate flakes with references to Git LFS
   tracked contents.
+  - [git-lfs/git-lfs](https://github.com/git-lfs/git-lfs?utm_source=gitlfs_site&utm_medium=installation_link&utm_campaign=gitlfs#example-usage)
+  - [Github Docs - Configuring Git Large File Storage](https://docs.github.com/en/repositories/working-with-files/managing-large-files/configuring-git-large-file-storage)
   - [Self-attributes](https://nix.dev/manual/nix/2.34/command-ref/new-cli/nix3-flake.html#self-attributes)
     ```nix
     {
@@ -178,3 +210,7 @@ Todo:
   };
 }
 ```
+
+#### Starter Configs
+
+https://github.com/Misterio77/nix-starter-configs
