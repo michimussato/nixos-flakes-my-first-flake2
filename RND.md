@@ -44,6 +44,7 @@ References:
 - [garnix](https://github.com/garnix-io)
 - [LibrePhoenix](https://www.youtube.com/@librephoenix)
 - [Vimjoyer](https://www.youtube.com/@vimjoyer)
+  - [Github](https://github.com/vimjoyer/modularize-video)
 - [Ellyse](https://www.youtube.com/playlist?list=PL-oJWTgK9N6_tJ751N-TvhcF0aPu39zEY)
   - What is Gleam?
 
@@ -81,6 +82,7 @@ References:
 - [NixOS Development Environment/Shells for Programming](https://www.youtube.com/watch?v=yds4CZ5N_40)
 - [Michael Stapelberg - Development shells with Nix: four quick examples](https://michael.stapelberg.ch/posts/2025-07-27-dev-shells-with-nix-4-quick-examples/)
 - [juliusunscripted - Configure a nix flake development shell](https://www.juliusunscripted.com/posts/configure-nix-flake-development-shell/)
+- [](https://gitlab.com/Mideno/pwnbelt/-/blob/V1.0.0/flake.nix?ref_type=tags)
 
 #### devenv
 
@@ -149,6 +151,10 @@ https://github.com/nix-community/home-manager
 
 #### Plasma Manager
 
+Todo:
+- [ ] Check tiling managers
+  - [](https://krohnkite.com/#)
+
 https://github.com/nix-community/plasma-manager
 
 Examples:
@@ -175,6 +181,7 @@ References:
 Resources:
 - [nix.dev - `nix flake`](https://nix.dev/manual/nix/2.34/command-ref/new-cli/nix3-flake.html#self-attributes1)
 - [Zero to Nix - Nix flakes](https://zero-to-nix.com/concepts/flakes/)
+- [NixOS & Flakes Book](https://nixos-and-flakes.thiscute.world/other-usage-of-flakes/inputs)
 
 Todo:
 - [ ] Investigate flakes with references to Git LFS
