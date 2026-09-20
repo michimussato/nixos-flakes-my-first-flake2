@@ -10,6 +10,7 @@
   };
 
   outputs = { self, nixpkgs }:
+
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
@@ -36,16 +37,18 @@
   in
 
   {
+    # https://michael.stapelberg.ch/posts/2025-07-27-dev-shells-with-nix-4-quick-examples/
+    formatter = pkgs.nixfmt-tree;
     devShells."${system}" = {
 
-      base = pkgs.mkShellNoCC {
-        buildInputs = pkgs-base;
-        shellHook = ''
-          echo "You are now in a Blender configured environment."
-          fhs
-        '';
-        env.TEST_VAR = "hello";
-      };
+      # blender-base = pkgs.mkShellNoCC {
+      #   buildInputs = pkgs-base;
+      #   shellHook = ''
+      #     echo "You are now in a Blender configured environment."
+      #     fhs
+      #   '';
+      #   env.TEST_VAR = "hello";
+      # };
 
       blender-3 = pkgs.mkShellNoCC {
         buildInputs = pkgs-base;
@@ -53,7 +56,8 @@
           echo "You are now in a Blender 3 configured environment."
           fhs
         '';
-        env.TEST_VAR = "hello";
+        # Custom Env:
+        # env.MY_CUSTOM_VAR = "custom value";
       };
 
       blender-4 = pkgs.mkShellNoCC {
@@ -62,7 +66,8 @@
           echo "You are now in a Blender 4 configured environment."
           fhs
         '';
-        env.TEST_VAR = "hello";
+        # Custom Env:
+        # env.MY_CUSTOM_VAR = "custom value";
       };
 
       blender-5 = pkgs.mkShellNoCC {
@@ -71,7 +76,8 @@
           echo "You are now in a Blender 5 configured environment."
           fhs
         '';
-        env.TEST_VAR = "hello";
+        # Custom Env:
+        # env.MY_CUSTOM_VAR = "custom value";
       };
 
     };

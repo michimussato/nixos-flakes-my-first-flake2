@@ -13,17 +13,15 @@
   };
 
   outputs = { self, nixpkgs }:
+
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
-  in
-
-  {
-    devShells.x86_64-linux.default = pkgs.mkShellNoCC {
-    packages = with pkgs; [
+    pkgs-base = with pkgs; [
       # fhs shell
       (pkgs.buildFHSEnv {
         name = "fhs";
+        runScript = "bash";
         # name = "houdini-${unwrapped.version}";
 
         # # houdini spawns hserver (and other license tools) that is supposed to live beyond the lifespan of houdini process
@@ -89,24 +87,33 @@
         ]);
       })
     ];
-    # extraBwrapArgs = [
-    #   "--ro-bind-try /run/opengl-driver/etc/OpenCL/vendors /etc/OpenCL/vendors" # this is the case of NixOS
-    #   "--ro-bind-try /etc/OpenCL/vendors /etc/OpenCL/vendors" # this is the case of not NixOS
-    # ];
-    runScript = "bash";
-    # runScript = pkgs.writeScript "houdini-wrapper" ''
-    #   # ncurses5 is needed by hfs ocl backend
-    #   # workaround for this issue: https://github.com/NixOS/nixpkgs/issues/89769
-    #   export LD_LIBRARY_PATH=/nix/store/qz68yx7v9zcpq490y6sb83v2dvygj4cr-ncurses-abi5-compat-6.6/lib:$LD_LIBRARY_PATH
-    #   exec "$@"
-    # '';
-    # set the environment variables that Qt apps expect
-    shellHook = ''
-      echo "You are now in a Nuke configured environment."
-      fhs
-    '';
-    # env.MY_TEST_VAR = "hello";
-    env.foundry_LICENSE = "5053@miniboss.meemoo.lan";
+  in
+
+  {
+    devShells."${system}" = {
+
+      nuke-base = pkgs.mkShellNoCC {
+        buildInputs = pkgs-base;
+        # extraBwrapArgs = [
+        #   "--ro-bind-try /run/opengl-driver/etc/OpenCL/vendors /etc/OpenCL/vendors" # this is the case of NixOS
+        #   "--ro-bind-try /etc/OpenCL/vendors /etc/OpenCL/vendors" # this is the case of not NixOS
+        # ];
+    #    runScript = "bash";
+        # runScript = pkgs.writeScript "houdini-wrapper" ''
+        #   # ncurses5 is needed by hfs ocl backend
+        #   # workaround for this issue: https://github.com/NixOS/nixpkgs/issues/89769
+        #   export LD_LIBRARY_PATH=/nix/store/qz68yx7v9zcpq490y6sb83v2dvygj4cr-ncurses-abi5-compat-6.6/lib:$LD_LIBRARY_PATH
+        #   exec "$@"
+        # '';
+        # set the environment variables that Qt apps expect
+        shellHook = ''
+          echo "You are now in a Nuke configured environment."
+          fhs
+        '';
+        # Custom Env:
+        # env.MY_CUSTOM_VAR = "custom value";
+        env.foundry_LICENSE = "5053@miniboss.meemoo.lan";
+      };
+    };
   };
-};
 }

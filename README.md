@@ -2,6 +2,7 @@
 
 How to use this flake:
 1. Install OS
+   - We can edit `configuration.nix` already at this stage if necessary
 2. Reboot
 3. Edit `configuration.nix`
    1. ```nix
@@ -35,13 +36,18 @@ How to use this flake:
       # cd nixos-flakes-my-first-flake2
       # nixos-rebuild --sudo switch --flake .#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
       sudo nixos-rebuild switch --flake github:michimussato/nixos-flakes-my-first-flake2#nixos-qemu --verbose
-      # nixos-rebuild --sudo switch --flake .#nixos-qemu -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
-      # [ ] sddm background not visible
+      # local:
+      # nix-shell -p git
+      # sudo nixos-rebuild switch --flake .#nixos-qemu --verbose
+      # [x] sddm background not visible when tracking image with Git LFS
       #     - reference to `version https://git-lfs.github.com` in package file seems correct
+      #     - disabled LFS tracking
       ```
    2. `homeConfigurations`
       ```shell
       home-manager switch --flake github:michimussato/nixos-flakes-my-first-flake2#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
+      # local:
+      # home-manager switch --flake .#nixos -b $(date +"%Y-%m-%d_%H-%M-%S") --verbose
       ```
 
 
