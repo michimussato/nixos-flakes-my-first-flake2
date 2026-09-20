@@ -18,6 +18,7 @@
     * [Flakes](#flakes)
       * [flake-utils](#flake-utils)
       * [Starter Configs](#starter-configs)
+      * [Dendritic](#dendritic)
 <!-- TOC -->
 
 ---
@@ -64,6 +65,7 @@ References:
 - [Nix Pills](https://nixos.org/guides/nix-pills/)
 - [nix.dev](https://nix.dev/)
   - [As PDF](https://nix.dev/nix-dev.pdf)
+- [Vimjoyer - NixOS Configuration](https://www.youtube.com/watch?v=2eNJy9DSGNw)
 
 ### Built Ins
 
@@ -204,6 +206,8 @@ Todo:
   - `hardware-configuration.nix`
   in flake?
 - [ ] How to use/treat/provide secrets?
+  - [Vimjoyer - Secure Declarative Secrets With SecretSpec | dotenv Files On Steroids](https://www.youtube.com/watch?v=dII4uMU-5R8)
+  - [Vimjoyer -  SecretSpec 0.18 is INCREDIBLE | SOPS & AGE support, More SDKs](https://www.youtube.com/watch?v=FMk8d8Komlw)
 - [ ] sddm: How to set avatars
   - https://www.reddit.com/r/NixOS/comments/1cot084/is_there_way_to_make_sddm_to_display_users_avatars/
 
@@ -223,3 +227,11 @@ Todo:
 #### Starter Configs
 
 https://github.com/Misterio77/nix-starter-configs
+
+#### Dendritic
+
+- [Adumh00man - Dendritic Nix is the Best Way to Configure a System](https://www.youtube.com/watch?v=buxopFR4VXQ)
+  - [voidarc/nixos](https://git.voidarc.co.uk/voidarc/nixos)
+    - `nix --extra-experimental-features "nix-command flakes" run "git+https://git.voidarc.co.uk/voidarc/nixos.git#davinci-resolve"`
+    - `nix --extra-experimental-features "nix-command flakes" run "git+https://git.voidarc.co.uk/voidarc/nixos.git#obs-studio"`
+    - `nix --extra-experimental-features "nix-command flakes" run "git+https://git.voidarc.co.uk/voidarc/nixos.git#nvim"`
