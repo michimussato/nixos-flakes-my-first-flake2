@@ -2,6 +2,7 @@
 * [Transition to NixOS](#transition-to-nixos)
   * [Install `nix` on Manjaro](#install-nix-on-manjaro)
   * [Learn `nix`](#learn-nix)
+    * [NixOS](#nixos)
     * [Built Ins](#built-ins)
     * [Editor Setup](#editor-setup)
     * [Development Environments](#development-environments)
@@ -37,6 +38,23 @@ curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh -s -- --da
 References:
 - [Nix Language Explained](https://www.youtube.com/watch?v=UgrwoAGSPOQ)
 - [Stop Guessing: Debug Your Nix Code Fast | Nix REPL](https://www.youtube.com/watch?v=swiWnAwionc)
+- [MyNixOS](https://mynixos.com/)
+- [garnix](https://github.com/garnix-io)
+
+### NixOS
+
+- [NixOS.org](https://nixos.org/)
+  - Manuals
+    - [Nix Manual](https://nixos.org/manual/nix/stable)
+    - [Nixpkgs Manual](https://nixos.org/manual/nixpkgs/stable)
+    - [NixOS Manual](https://nixos.org/manual/nixos/stable)
+  - [Search Packages](https://search.nixos.org/packages)
+  - [Search Options](https://search.nixos.org/options)
+- [Manual](https://nixos.org/manual/nixos/stable/)
+- [NixOS Wiki](https://wiki.nixos.org/wiki/NixOS_Wiki)
+  - [Flakes](https://wiki.nixos.org/wiki/Flakes)
+- [nix.dev](https://nix.dev/)
+  - [As PDF](https://nix.dev/nix-dev.pdf)
 
 ### Built Ins
 
@@ -47,7 +65,7 @@ Resources:
 
 References:
 - [Easiest Way To Write Nix | Code Editor Setup](https://www.youtube.com/watch?v=M_zMoHlbZBY)
-- [ NixOS Development Environment/Shells for Programming ](https://www.youtube.com/watch?v=yds4CZ5N_40)
+- [NixOS Development Environment/Shells for Programming](https://www.youtube.com/watch?v=yds4CZ5N_40)
 
 ### Development Environments
 
@@ -136,6 +154,16 @@ Todo:
       };
     }
     ```
+- [ ] How can we stop referencing things like:
+  - `boot.loader.grub.device`
+  - `boot.kernelPackages`
+  - `...`
+  in `configuration.nix`
+  - `hardware-configuration.nix`
+  in flake?
+- [ ] How to use/treat/provide secrets?
+- [ ] sddm: How to set avatars
+  - https://www.reddit.com/r/NixOS/comments/1cot084/is_there_way_to_make_sddm_to_display_users_avatars/
 
 #### flake-utils
 
