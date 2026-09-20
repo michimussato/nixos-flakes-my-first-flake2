@@ -44,6 +44,8 @@ References:
 - [garnix](https://github.com/garnix-io)
 - [LibrePhoenix](https://www.youtube.com/@librephoenix)
 - [Vimjoyer](https://www.youtube.com/@vimjoyer)
+- [Ellyse](https://www.youtube.com/playlist?list=PL-oJWTgK9N6_tJ751N-TvhcF0aPu39zEY)
+  - What is Gleam?
 
 ### NixOS
 
