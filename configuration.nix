@@ -146,6 +146,13 @@ in
     isNormalUser = true;
     description = "NixOS Sandbox User";
     extraGroups = [ "networkmanager" "wheel" ];
+    # https://wiki.nixos.org/wiki/SSH_public_key_authentication#SSH_server_configuration
+    # - [x] works
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG5Fc5JyKRrduxt/QD0A+Ud1hvOZzhCZexc+Pmnm36k4"
+      # note: ssh-copy-id will add user@your-machine after the public key
+      # but we can remove the "@your-machine" part
+    ];
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -157,6 +164,13 @@ in
     isNormalUser = true;
     description = "Michael Mussato";
     extraGroups = [ "networkmanager" "wheel" ];
+    # https://wiki.nixos.org/wiki/SSH_public_key_authentication#SSH_server_configuration
+    # - [x] works
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG5Fc5JyKRrduxt/QD0A+Ud1hvOZzhCZexc+Pmnm36k4"
+      # note: ssh-copy-id will add user@your-machine after the public key
+      # but we can remove the "@your-machine" part
+    ];
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -305,6 +319,11 @@ in
       "d	/data	0777	root	root	-	-"
       # set chattr +i on /data
       "h	/data	-	-	-	-	+i"
+      # https://www.reddit.com/r/NixOS/comments/1cot084/is_there_way_to_make_sddm_to_display_users_avatars/
+      # "L	/var/lib/AccountsService/icons/michael	-	-	-	-	${./path/to/your/picture.png}"
+      # Todo:
+      #  - [ ] Works, but fix hard coded path
+      "L	/var/lib/AccountsService/icons/michael	-	-	-	-	/nix/store/dyj1kblmvrc42vbqmnr470yf12n4yw20-home-manager-files/.face"
     ];
   };
 
@@ -344,6 +363,9 @@ in
   # - [ ] make sure the system works even if the mount fails
   fileSystems."/data" = {
     # sudo systemctl status data.mount
+    # Todo:
+    #  - [ ] maybe use sshfs?
+    #        - https://nixos.org/manual/nixos/stable/#sec-sshfs-file-systems
     device = "miniboss.meemoo.lan:/data";
     fsType = "nfs4";
     options = [
