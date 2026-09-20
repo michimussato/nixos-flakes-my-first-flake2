@@ -247,6 +247,9 @@ in
   # also available for home manager
   services.cachix-agent.enable = true;
 
+  # also available for home manager
+  services.teamviewer.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
