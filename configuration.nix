@@ -259,7 +259,7 @@ in
   services.openssh = {
     enable = true;
     ports = [ 22 ];
-    settings.PermitRootLogin = false;
+    settings.PermitRootLogin = "no";
     settings.PasswordAuthentication = false;
   };
 
