@@ -248,3 +248,5 @@ https://github.com/Misterio77/nix-starter-configs
     - `nix --extra-experimental-features "nix-command flakes" run "git+https://git.voidarc.co.uk/voidarc/nixos.git#nvim"`
 - [Vimjoyer - Ultimate NixOS Desktop: Niri, Noctalia Shell, and the Dendritic Pattern | Full Setup](https://www.youtube.com/watch?v=aNgujRXDTdE)
   - [https://www.vimjoyer.com/vid79-parts-wrapped](https://www.vimjoyer.com/vid79-parts-wrapped)
+- [Vimjoyer - Best Modular Nix Flake Framework | Break Your Flake Into Parts](https://www.youtube.com/watch?v=kvprcW6QMIE)
+- [Vimjoyer - Elevate Your Nix Config With Dendritic Pattern](https://www.youtube.com/watch?v=-TRbzkw6Hjs)
