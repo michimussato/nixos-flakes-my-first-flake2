@@ -9,6 +9,8 @@
       * [devenv](#devenv)
         * [Cachix](#cachix)
     * [Experimental Features](#experimental-features)
+    * [Window Managers](#window-managers)
+      * [niri](#niri)
     * [nix-community](#nix-community)
       * [Home Manager](#home-manager)
       * [Plasma Manager](#plasma-manager)
@@ -138,6 +140,15 @@ How to enable:
     ];
   }
   ```
+  
+### Window Managers
+
+#### niri
+
+- [](https://github.com/niri-wm/niri)
+- [Vimjoyer - Ultimate NixOS Desktop: Niri, Noctalia Shell, and the Dendritic Pattern | Full Setup](https://www.youtube.com/watch?v=aNgujRXDTdE)
+  - https://github.com/vimjoyer/nixconf/blob/main/wrappedPrograms/niri.nix
+- [Nick Janetakis - How Is niri This Good? Live Demo + Config](https://www.youtube.com/watch?v=7XmD5UyyhZQ)
 
 ### nix-community
 
@@ -235,3 +246,5 @@ https://github.com/Misterio77/nix-starter-configs
     - `nix --extra-experimental-features "nix-command flakes" run "git+https://git.voidarc.co.uk/voidarc/nixos.git#davinci-resolve"`
     - `nix --extra-experimental-features "nix-command flakes" run "git+https://git.voidarc.co.uk/voidarc/nixos.git#obs-studio"`
     - `nix --extra-experimental-features "nix-command flakes" run "git+https://git.voidarc.co.uk/voidarc/nixos.git#nvim"`
+- [Vimjoyer - Ultimate NixOS Desktop: Niri, Noctalia Shell, and the Dendritic Pattern | Full Setup](https://www.youtube.com/watch?v=aNgujRXDTdE)
+  - [https://www.vimjoyer.com/vid79-parts-wrapped](https://www.vimjoyer.com/vid79-parts-wrapped)
