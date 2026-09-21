@@ -258,7 +258,7 @@ in
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    ports = [  ];
+    ports = [ 22 ];
     settings.PermitRootLogin = false;
     settings.PasswordAuthentication = false;
   };
