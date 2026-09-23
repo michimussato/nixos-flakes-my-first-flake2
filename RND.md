@@ -18,9 +18,11 @@
     * [Nix Config](#nix-config)
     * [Nix/NixOS Upgrade](#nixnixos-upgrade)
     * [Flakes](#flakes)
+      * [Helpful `nix repl` Commands (for Debugging)](#helpful-nix-repl-commands-for-debugging)
       * [flake-utils](#flake-utils)
       * [Starter Configs](#starter-configs)
       * [Dendritic](#dendritic)
+        * [flake-parts](#flake-parts)
 <!-- TOC -->
 
 ---
@@ -222,6 +224,20 @@ Todo:
 - [ ] sddm: How to set avatars
   - https://www.reddit.com/r/NixOS/comments/1cot084/is_there_way_to_make_sddm_to_display_users_avatars/
 
+#### Helpful `nix repl` Commands (for Debugging)
+
+References:
+- [](https://nix.dev/manual/nix/2.34/command-ref/new-cli/nix3-repl.html)
+  - [](https://teu5us.github.io/nix-lib.html)
+
+- `:load-flake .`
+- `:last-loaded`
+- `:print homeConfigurations`
+
+```shell
+nix repl --expr 'import <nixpkgs>{}'
+```
+
 #### flake-utils
 
 Todo:
@@ -250,3 +266,8 @@ https://github.com/Misterio77/nix-starter-configs
   - [https://www.vimjoyer.com/vid79-parts-wrapped](https://www.vimjoyer.com/vid79-parts-wrapped)
 - [Vimjoyer - Best Modular Nix Flake Framework | Break Your Flake Into Parts](https://www.youtube.com/watch?v=kvprcW6QMIE)
 - [Vimjoyer - Elevate Your Nix Config With Dendritic Pattern](https://www.youtube.com/watch?v=-TRbzkw6Hjs)
+- [Dendrix](https://dendrix.denful.dev/Getting-Started.html)
+
+##### flake-parts
+
+- [home-manager](https://flake.parts/options/home-manager.html)
