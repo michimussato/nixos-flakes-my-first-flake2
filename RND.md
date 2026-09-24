@@ -3,6 +3,8 @@
   * [Install `nix` on Manjaro](#install-nix-on-manjaro)
   * [Learn `nix`](#learn-nix)
     * [NixOS](#nixos)
+    * [nix Store](#nix-store)
+    * [Configuration File](#configuration-file)
     * [Built Ins](#built-ins)
     * [Editor Setup](#editor-setup)
     * [Development Environments](#development-environments)
@@ -71,6 +73,14 @@ References:
 - [nix.dev](https://nix.dev/)
   - [As PDF](https://nix.dev/nix-dev.pdf)
 - [Vimjoyer - NixOS Configuration](https://www.youtube.com/watch?v=2eNJy9DSGNw)
+
+### nix Store
+
+- [Moving the Store](https://nixos.wiki/wiki/Storage_optimization#Moving_the_store)
+
+### Configuration File
+
+- https://nix.dev/manual/nix/2.34/command-ref/conf-file
 
 ### Built Ins
 
@@ -311,6 +321,7 @@ https://github.com/Misterio77/nix-starter-configs
 - [Vimjoyer - Elevate Your Nix Config With Dendritic Pattern](https://www.youtube.com/watch?v=-TRbzkw6Hjs)
 - [Dendrix](https://dendrix.denful.dev/Getting-Started.html)
   - [](https://github.com/henrysipp/nix-setup/blob/nix-flakes/flake.nix)
+- https://simonshine.dk/articles/dendritic-sops-nix-flake-template/
 
 ##### flake-parts
 
