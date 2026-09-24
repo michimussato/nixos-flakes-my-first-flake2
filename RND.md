@@ -19,6 +19,7 @@
     * [Nix/NixOS Upgrade](#nixnixos-upgrade)
     * [Flakes](#flakes)
       * [Helpful `nix repl` Commands (for Debugging)](#helpful-nix-repl-commands-for-debugging)
+        * [Ex: Working with a `flake.nix`](#ex-working-with-a-flakenix)
       * [flake-utils](#flake-utils)
       * [Starter Configs](#starter-configs)
       * [Dendritic](#dendritic)
@@ -197,6 +198,9 @@ Resources:
 - [nix.dev - `nix flake`](https://nix.dev/manual/nix/2.34/command-ref/new-cli/nix3-flake.html#self-attributes1)
 - [Zero to Nix - Nix flakes](https://zero-to-nix.com/concepts/flakes/)
 - [NixOS & Flakes Book](https://nixos-and-flakes.thiscute.world/other-usage-of-flakes/inputs)
+- References:
+  - [Input schema](https://nixos.wiki/wiki/flakes#Input_schema)
+  - [Output schema](https://nixos.wiki/wiki/flakes#Output_schema)
 
 Todo:
 - [ ] Investigate flakes with references to Git LFS
@@ -238,6 +242,45 @@ References:
 nix repl --expr 'import <nixpkgs>{}'
 ```
 
+##### Ex: Working with a `flake.nix`
+
+```shell
+nix flake update
+git add -A
+nix repl
+```
+
+```
+:lf .
+:ll
+```
+
+flake structure:
+```nix
+outPath
+outputs
+inputs
+sourceInfo
+narHash
+submodules
+dirtyRev
+dirtyShortRev
+lastModified
+lastModifiedDate
+_type
+apps
+checks
+devShells
+formatter
+legacyPackages
+nixosConfigurations
+nixosModules
+overlays
+packages
+homeModules
+homeConfigurations
+```
+
 #### flake-utils
 
 Todo:
@@ -267,6 +310,7 @@ https://github.com/Misterio77/nix-starter-configs
 - [Vimjoyer - Best Modular Nix Flake Framework | Break Your Flake Into Parts](https://www.youtube.com/watch?v=kvprcW6QMIE)
 - [Vimjoyer - Elevate Your Nix Config With Dendritic Pattern](https://www.youtube.com/watch?v=-TRbzkw6Hjs)
 - [Dendrix](https://dendrix.denful.dev/Getting-Started.html)
+  - [](https://github.com/henrysipp/nix-setup/blob/nix-flakes/flake.nix)
 
 ##### flake-parts
 
