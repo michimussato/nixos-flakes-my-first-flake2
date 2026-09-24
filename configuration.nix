@@ -228,6 +228,8 @@ in
     devenv
     # nvidia-container-toolkit
     # This defines a custom global sddm background image
+    # Todo:
+    #  - [ ] move this to Plasma or SDDM
     (pkgs.writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
       [General]
       background="${sddm-background-package}"
