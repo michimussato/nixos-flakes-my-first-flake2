@@ -15,25 +15,24 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
     pkgs-base = with pkgs; [
-        # fhs shell
-        (pkgs.buildFHSEnv {
-          name = "fhs";
-          runScript = "bash";
-          targetPkgs = pkgs: (with pkgs; [
-            udev
-            alsa-lib
-            libX11
-            libXrender
-            libXfixes
-            libXi
-            libxkbcommon
-            libSM
-            libICE
-            libGL
-            ]);
-          }
-         )
-      ];
+      # fhs shell
+      (pkgs.buildFHSEnv {
+        name = "fhs";
+        runScript = "bash";
+        targetPkgs = pkgs: (with pkgs; [
+          udev
+          alsa-lib
+          libX11
+          libXrender
+          libXfixes
+          libXi
+          libxkbcommon
+          libSM
+          libICE
+          libGL
+        ]);
+      })
+    ];
   in
 
   {

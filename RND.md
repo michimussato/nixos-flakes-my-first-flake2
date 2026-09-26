@@ -13,9 +13,13 @@
     * [Experimental Features](#experimental-features)
     * [Window Managers](#window-managers)
       * [niri](#niri)
-    * [nix-community](#nix-community)
-      * [Home Manager](#home-manager)
-      * [Plasma Manager](#plasma-manager)
+    * [Community Projects](#community-projects)
+      * [nix-community](#nix-community)
+        * [Home Manager](#home-manager)
+        * [Plasma Manager](#plasma-manager)
+      * [NGI Forge](#ngi-forge)
+      * [flake-parts](#flake-parts)
+      * [nix-topology](#nix-topology)
   * [Practical](#practical)
     * [Nix Config](#nix-config)
     * [Nix/NixOS Upgrade](#nixnixos-upgrade)
@@ -25,7 +29,7 @@
       * [flake-utils](#flake-utils)
       * [Starter Configs](#starter-configs)
       * [Dendritic](#dendritic)
-        * [flake-parts](#flake-parts)
+        * [flake-parts](#flake-parts-1)
 <!-- TOC -->
 
 ---
@@ -163,7 +167,9 @@ How to enable:
   - https://github.com/vimjoyer/nixconf/blob/main/wrappedPrograms/niri.nix
 - [Nick Janetakis - How Is niri This Good? Live Demo + Config](https://www.youtube.com/watch?v=7XmD5UyyhZQ)
 
-### nix-community
+### Community Projects
+
+#### nix-community
 
 - [nix-community](https://github.com/nix-community)
   - [Repositories](https://github.com/orgs/nix-community/repositories)
@@ -171,11 +177,11 @@ How to enable:
     - [[home-manager](https://github.com/nix-community/home-manager)](#home-manager)
     - [[plasma-manager](https://github.com/nix-community/plasma-manager)](#plasma-manager)
 
-#### Home Manager
+##### Home Manager
 
 https://github.com/nix-community/home-manager
 
-#### Plasma Manager
+##### Plasma Manager
 
 Todo:
 - [ ] Check tiling managers
@@ -185,6 +191,24 @@ https://github.com/nix-community/plasma-manager
 
 Examples:
 - [](https://github.com/nix-community/plasma-manager/blob/trunk/examples/systemFlake/flake.nix)
+
+#### NGI Forge
+
+- [NGI Forge](https://ngi.nixos.org/)
+
+#### flake-parts
+
+
+- [home-manager](https://flake.parts/options/home-manager.html)
+- [](https://github.com/hercules-ci/flake-parts)
+
+#### nix-topology
+
+- [nix-topology](https://github.com/oddlama/nix-topology)
+
+flake-parts module:
+- https://github.com/oddlama/nix-topology#-installation-and-usage
+  - https://github.com/oddlama/nix-topology/issues/36
 
 ## Practical
 
@@ -320,8 +344,10 @@ https://github.com/Misterio77/nix-starter-configs
 - [Vimjoyer - Best Modular Nix Flake Framework | Break Your Flake Into Parts](https://www.youtube.com/watch?v=kvprcW6QMIE)
 - [Vimjoyer - Elevate Your Nix Config With Dendritic Pattern](https://www.youtube.com/watch?v=-TRbzkw6Hjs)
 - [Dendrix](https://dendrix.denful.dev/Getting-Started.html)
-  - [](https://github.com/henrysipp/nix-setup/blob/nix-flakes/flake.nix)
+  - [Github - henrysipp/nix-setup](https://github.com/henrysipp/nix-setup/blob/nix-flakes/flake.nix)
 - https://simonshine.dk/articles/dendritic-sops-nix-flake-template/
+- [hcentner's blog](https://hcentner.dev/posts/2025-12-14-nixconfig)
+  - [Github - HarrisonCentner/nixconfig](https://github.com/HarrisonCentner/nixconfig)
 
 ##### flake-parts
 

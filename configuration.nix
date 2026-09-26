@@ -202,6 +202,14 @@ in
   # a browser to work with
   programs.firefox.enable = true;
 
+  # Enable fzf globally
+  # https://search.nixos.org/options?channel=26.05&query=fzf&type=options
+  programs.fzf = {
+    # package = pkgs.fzf;
+    fuzzyCompletion = true;
+    keybindings = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
